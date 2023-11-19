@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
 
     public GameObject player;
-    public Vector3 offset = new Vector3(0, 4, 7);
+    public Vector3 offset = new Vector3(0, 4, 10);
 
     
     void Start()
