@@ -8,18 +8,25 @@ public class PlayerController : MonoBehaviour
 
     public float velocity;
     public float mass;
+    public float turnSpeed;
     public TMP_Text speedmeter;
 
-    // Start is called before the first frame update
+    public float horizontalInput;
+    public float verticalInput;
+
     void Start()
     {
         GetComponent<Rigidbody>().mass = mass;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * velocity);
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+
+
+        transform.Translate(Vector3.forward * Time.deltaTime * velocity * verticalInput);
+        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
         speedmeter.text = "Km/H " + velocity.ToString();
     }
 }

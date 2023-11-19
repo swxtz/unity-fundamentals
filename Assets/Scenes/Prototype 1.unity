@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 1
   mass: 1000
+  turnSpeed: 5
   speedmeter: {fileID: 625144608}
 --- !u!54 &211433750
 Rigidbody:
