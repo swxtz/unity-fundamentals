@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 50f;
     public TMP_Text speedmeter;
 
-    public float horizontalInput;
-    public float verticalInput;
+    private float horizontalInput;
+    private float verticalInput;
 
     public Rigidbody car;
 
