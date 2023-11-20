@@ -10,16 +10,21 @@ using UnityEngine;
 public class Speedometer : MonoBehaviour
 {
 
-    public TMP_Text text;
-    private float speed;
+    public Rigidbody car;
 
-    void Start()
-    {
-        speed = GetComponent<PlayerController>().velocity;
-    }
+    public float maxSpeed = 0.0f;
+    public float minSpeedPointerAngle;
+    public float maxSpeedPointerAngle;
+
+    public RectTransform pointerHolder;
+    public TMPro.TMP_Text speedLabel;   
 
     void Update()
     {
-        text.text = "Km/H " + speed;
+        float speed = car.velocity.magnitude * 3.6f;
+
+        speedLabel.text = (int)speed + "";
+        speedLabel.alignment = TMPro.TextAlignmentOptions.Center;
+        pointerHolder.localEulerAngles = new Vector3(0, 0, Mathf.Lerp(minSpeedPointerAngle, maxSpeedPointerAngle, speed / maxSpeed));
     }
 }
