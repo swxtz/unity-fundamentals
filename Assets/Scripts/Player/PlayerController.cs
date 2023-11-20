@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
     public float mass;
     
-    public float turnSpeed;
+    public float turnSpeed = 50f;
     public TMP_Text speedmeter;
 
     public float horizontalInput;
@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
 
         if (verticalInput != 0)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+            //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+            transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
         }
 
         transform.Translate(Vector3.forward * Time.deltaTime * velocity * verticalInput);
