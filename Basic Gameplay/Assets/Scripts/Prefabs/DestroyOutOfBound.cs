@@ -10,7 +10,7 @@ public class DestroyOutOfBound : MonoBehaviour
     {
         if (transform.position.z > yRange)
         {
-            Destroy(GameObject);
+            Destroy(gameObject);
         }
     }
 }

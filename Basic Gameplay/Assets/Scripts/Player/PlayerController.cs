@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    private void Start()
+    {
+        
+    }
+
 
     void Update()
     {
@@ -28,7 +33,7 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+        //transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
 
     }
 
