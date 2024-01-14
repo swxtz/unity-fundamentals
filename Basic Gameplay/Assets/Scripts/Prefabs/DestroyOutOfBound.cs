@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class DestroyOutOfBound : MonoBehaviour
 {
-    private int yRange = 33;
+    private int topBound = 33;
+    private int lowBound = -10;
 
     void Update()
     {
-        if (transform.position.z > yRange)
+        if (transform.position.z > topBound)
+        {
+            Destroy(gameObject);
+        } else if(transform.position.z < lowBound)
         {
             Destroy(gameObject);
         }
