@@ -15,6 +15,7 @@ public class AnimalLimiter : MonoBehaviour
         }
         else if (transform.position.z < bottomRange)
         {
+            Debug.Log("Morreu");
             Destroy(gameObject);
         }
     }
